@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
 namespace APIdata.Model
@@ -13,6 +14,8 @@ namespace APIdata.Model
         public ObservableCollection<Telesa> AllObjects { get; set; }
         public AllCurentObjects()
         {
+            AllObjects = new ObservableCollection<Telesa>();
+            GetFromAPI();
         }
 
         public async Task GetFromAPI()
@@ -26,7 +29,17 @@ namespace APIdata.Model
                 HttpResponseMessage response = await http.GetAsync(url, HttpCompletionOption.ResponseContentRead);
                 string res = await response.Content.ReadAsStringAsync();
                 var content = JsonConvert.DeserializeObject<dynamic>(res);
-
+                JObject jo = JObject.Parse(content);
+                for (int i = 0; i < 13; i++)
+                {
+                    Telesa tl = new Telesa();
+                    tl.Name = Convert.ToString(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["name"]);
+                    tl.IsDangerous = Convert.ToBoolean(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["is_potentially_hazardous_asteroid"]);
+                    tl.KMPerHour = Convert.ToDouble(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]);
+                    tl.MissDistance = Convert.ToDouble(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["miss_distance"]["kilometers"]);
+                    tl.CloseApproachDate = Convert.ToDateTime(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["close_approach_date"]);
+                    AllObjects.Add(tl);
+                }
             }
             catch (HttpRequestException ex)
             {
@@ -35,3 +48,4 @@ namespace APIdata.Model
         }
     }
 }
+
