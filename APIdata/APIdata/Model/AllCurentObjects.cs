@@ -29,7 +29,7 @@ namespace APIdata.Model
                 HttpResponseMessage response = await http.GetAsync(url, HttpCompletionOption.ResponseContentRead);
                 string res = await response.Content.ReadAsStringAsync();
                 var content = JsonConvert.DeserializeObject<dynamic>(res);
-                JObject jo = JObject.Parse(content);
+                JObject jo = JObject.Parse(res);
                 for (int i = 0; i < 13; i++)
                 {
                     Telesa tl = new Telesa();
