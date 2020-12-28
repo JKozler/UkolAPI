@@ -24,8 +24,8 @@
                             <Label Text="{Binding Name}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" TextColor="Black" Style="{DynamicResource LargeLabel}"/>
                             <Label Text="{Binding CloseApproachDate}" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0" TextColor="Black" Style="{DynamicResource SmallLabel}"/>
                             <Label Text="{Binding KMPerHour}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="0" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
-                            <Label Text="{Binding MissDistance}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
-                            <Label Text="{Binding IsDangerous}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="0" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
+                            <Label Text="{Binding MissDistance}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
+                            <Label Text="{Binding IsDangerous}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="1" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
                         </Grid>
                     </StackLayout>
                 </ViewCell>
