@@ -26,7 +26,9 @@ namespace APIdata.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            Page p = new ObjectPage((((ListView)sender).SelectedItem) as Telesa, (BindingContext as AllCurentObjects).AllObjects);
+            NavigationPage np = new NavigationPage(p);
+            await Application.Current.MainPage.Navigation.PushAsync(np);
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;

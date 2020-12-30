@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="APIdata.Views.ObjectPage">
+             x:Class="APIdata.Views.ObjectPage" Title="More details">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Name" HorizontalOptions="CenterAndExpand" x:Name="nameTxt"></Entry>
+            <DatePicker HorizontalOptions="CenterAndExpand" x:Name="closeTxt"></DatePicker>
+            <Entry Placeholder="Speed km/h" HorizontalOptions="CenterAndExpand" x:Name="speedTxt"></Entry>
+            <Entry Placeholder="Miss Distance" HorizontalOptions="CenterAndExpand" x:Name="missTxt"></Entry>
+            <Picker Title="Is dangerous?" HorizontalOptions="CenterAndExpand" x:Name="typeObject"></Picker>
+
+            <Button Text="Delegate misstake" VerticalOptions="End" x:Name="Submit" Clicked="Submit_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
