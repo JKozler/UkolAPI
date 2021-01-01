@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace APIdata.Model
 {
@@ -12,6 +13,5 @@ namespace APIdata.Model
         public double KMPerHour { get; set; }
         public double MissDistance { get; set; }
         public bool IsDangerous { get; set; }
-        public bool IsDelegateAsNew { get; set; }
     }
 }

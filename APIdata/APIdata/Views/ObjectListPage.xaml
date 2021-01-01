@@ -10,7 +10,7 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout x:Name="backgroundIsNew" BackgroundColor="#eee" Margin="0">
+                    <StackLayout BackgroundColor="#eee" Margin="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

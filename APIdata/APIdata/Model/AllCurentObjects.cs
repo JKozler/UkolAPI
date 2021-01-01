@@ -7,6 +7,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace APIdata.Model
 {
@@ -46,7 +47,6 @@ namespace APIdata.Model
                     tl.KMPerHour = Convert.ToDouble(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]);
                     tl.MissDistance = Convert.ToDouble(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["miss_distance"]["kilometers"]);
                     tl.CloseApproachDate = Convert.ToDateTime(jo["near_earth_objects"][dt2.ToString("yyyy-MM-dd")][i]["close_approach_data"][0]["close_approach_date"]);
-                    tl.IsDelegateAsNew = false;
                     AllObjects.Add(tl);
                 }
             }
