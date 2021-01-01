@@ -4,10 +4,15 @@
              x:Class="APIdata.Views.ObjectPage" Title="More details">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Name: " HorizontalOptions="CenterAndExpand"></Label>
             <Entry Placeholder="Name" HorizontalOptions="CenterAndExpand" x:Name="nameTxt"></Entry>
+            <Label Text="Close approache date: " HorizontalOptions="CenterAndExpand"></Label>
             <DatePicker HorizontalOptions="CenterAndExpand" x:Name="closeTxt"></DatePicker>
+            <Label Text="Speed (km): " HorizontalOptions="CenterAndExpand"></Label>
             <Entry Placeholder="Speed km/h" HorizontalOptions="CenterAndExpand" x:Name="speedTxt"></Entry>
+            <Label Text="Miss distance (km): " HorizontalOptions="CenterAndExpand"></Label>
             <Entry Placeholder="Miss Distance" HorizontalOptions="CenterAndExpand" x:Name="missTxt"></Entry>
+            <Label Text="Is dangerous: " HorizontalOptions="CenterAndExpand"></Label>
             <Picker Title="Is dangerous?" HorizontalOptions="CenterAndExpand" x:Name="typeObject"></Picker>
 
             <Button Text="Delegate misstake" VerticalOptions="End" x:Name="Submit" Clicked="Submit_Clicked"></Button>

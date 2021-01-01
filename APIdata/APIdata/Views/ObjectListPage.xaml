@@ -10,7 +10,7 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout BackgroundColor="#eee" Margin="0">
+                    <StackLayout x:Name="backgroundIsNew" BackgroundColor="#eee" Margin="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -24,14 +24,14 @@
                                 <RowDefinition Height="5*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Label Text="Name of object" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0"></Label>
+                            <Label Text="Name of object" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" TextColor="Gray"></Label>
                             <Label Text="{Binding Name}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="1" TextColor="Black" Style="{DynamicResource LargeLabel}"/>
                             <Label Text="{Binding CloseApproachDate}" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0"  TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
-                            <Label Text="Speed (Km/h)" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="0"></Label>
+                            <Label Text="Speed (Km/h)" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="0"  TextColor="Gray"></Label>
                             <Label Text="{Binding KMPerHour}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="1" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
-                            <Label Text="Is dangerous?" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2"></Label>
+                            <Label Text="Is dangerous?" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="2"  TextColor="Gray"></Label>
                             <Label Text="{Binding IsDangerous}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="3" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
-                            <Label Text="Miss distance (Km)" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="2"></Label>
+                            <Label Text="Miss distance (Km)" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="2" TextColor="Gray"></Label>
                             <Label Text="{Binding MissDistance}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="3" TextColor="Black" Style="{DynamicResource ListItemTextStyle}"/>
                             <StackLayout BackgroundColor="Black" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0"></StackLayout>
                         </Grid>

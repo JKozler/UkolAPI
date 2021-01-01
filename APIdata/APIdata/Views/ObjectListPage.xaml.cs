@@ -19,6 +19,7 @@ namespace APIdata.Views
             InitializeComponent();
             AllCurentObjects telesa = new AllCurentObjects();
             BindingContext = telesa;
+            
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
