@@ -13,17 +13,17 @@ namespace APIdata.Views
     public partial class ObjectListPage : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
-
+        AllCurentObjects telesa = new AllCurentObjects();
         public ObjectListPage()
         {
             InitializeComponent();
-            AllCurentObjects telesa = new AllCurentObjects();
             BindingContext = telesa;
-            
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            ListView listView = (ListView)sender;
+            listView.BackgroundColor = new Color(255,120,255);
             if (e.Item == null)
                 return;
 
@@ -33,6 +33,20 @@ namespace APIdata.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private void datePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            if (Convert.ToDateTime(datePicker.Date) > DateTime.Now)
+                DisplayAlert("Bad date.", "Date have to be in past.", "OK");
+            else
+                LoadNewValues();
+        }
+
+        public async Task LoadNewValues() 
+        {
+            await telesa.GetFromAPIByDate(Convert.ToDateTime(datePicker.Date));
+            BindingContext = telesa;
         }
     }
 }

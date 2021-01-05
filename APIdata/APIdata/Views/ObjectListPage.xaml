@@ -2,7 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APIdata.Views.ObjectListPage" Title="List of space objects">
-  <ListView x:Name="MyListView"
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="List of space objects" Grid.Column="0" TextColor="White" FontSize="20"></Label>
+                <DatePicker Grid.Column="1" x:Name="datePicker" DateSelected="datePicker_DateSelected"></DatePicker>
+            </Grid>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ListView x:Name="MyListView"
             ItemsSource="{Binding AllObjects}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement" RowHeight="120">
