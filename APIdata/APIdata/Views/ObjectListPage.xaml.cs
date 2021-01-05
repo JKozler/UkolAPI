@@ -22,8 +22,7 @@ namespace APIdata.Views
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            ListView listView = (ListView)sender;
-            listView.BackgroundColor = new Color(255,120,255);
+            ((ListView)sender).BackgroundColor = new Color(255,120,255);
             if (e.Item == null)
                 return;
 

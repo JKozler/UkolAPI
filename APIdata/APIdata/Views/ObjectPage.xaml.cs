@@ -33,6 +33,8 @@ namespace APIdata.Views
 
         private void Submit_Clicked(object sender, EventArgs e)
         {
+            var ob = cCollection.FirstOrDefault(i => i.Name == nameTxt.Text);
+            cCollection.Remove(ob);
             cCollection.Add(new Telesa { Name = nameTxt.Text, CloseApproachDate = Convert.ToDateTime(closeTxt.Date), IsDangerous = Convert.ToBoolean(typeObject.SelectedItem), KMPerHour = Convert.ToDouble(speedTxt.Text), MissDistance = Convert.ToDouble(missTxt.Text) });
             Application.Current.MainPage.Navigation.PopAsync();
         }
