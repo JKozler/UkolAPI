@@ -34,12 +34,12 @@ namespace APIdata.Views
             ((ListView)sender).SelectedItem = null;
         }
 
-        private void datePicker_DateSelected(object sender, DateChangedEventArgs e)
+        private async void datePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             if (Convert.ToDateTime(datePicker.Date) > DateTime.Now)
-                DisplayAlert("Bad date.", "Date have to be in past.", "OK");
+                await DisplayAlert("Bad date.", "Date have to be in past.", "OK");
             else
-                LoadNewValues();
+                await LoadNewValues();
         }
 
         public async Task LoadNewValues() 
